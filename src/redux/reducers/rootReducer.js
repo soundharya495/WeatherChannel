@@ -46,7 +46,7 @@ const reducer = (state = initState, actions) => {
       return {
         ...state,
         error: null,
-        forecast: payload,
+        forecast: payload.data.slice(1, 6),
         loading: false,
       };
     }

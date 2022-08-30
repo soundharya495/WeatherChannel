@@ -6,7 +6,6 @@ import { get_forecast_gps } from "../redux/actions/action";
 import moment from "moment";
 
 const Forecast = () => {
-  const [forecastlist, setForecastlist] = useState();
   const dispatch = useDispatch();
   const { forecast } = useSelector((state) => state);
 
@@ -21,7 +20,6 @@ const Forecast = () => {
   }));
   useEffect(() => {
     getCurrentLocationForecast();
-    setForecastlist(forecast && forecast.data.slice(1, 6));
   }, []);
 
   const getCurrentLocationForecast = (e) => {
@@ -36,24 +34,26 @@ const Forecast = () => {
 
   return (
     <Grid container justifyContent="space-around">
-      {forecastlist &&
-        forecastlist.map((forecast) => (
+      {forecast &&
+        forecast.map((forecastlist) => (
           <StyledBox>
             <Typography>
-              {moment(forecast && forecast.datetime).format("ddd D MMM ")}
+              {moment(forecastlist && forecastlist.datetime).format(
+                "ddd D MMM "
+              )}
             </Typography>
             <Grid item>
               <img
                 style={{ width: "50px", height: "50px" }}
                 src={`https://www.weatherbit.io/static/img/icons/${
-                  forecast && forecast.weather.icon
+                  forecastlist && forecastlist.weather.icon
                 }.png`}
-                alt={forecast && forecast.weather.description}
+                alt={forecastlist && forecastlist.weather.description}
               />
             </Grid>
             <Grid item container justifyContent="space-around">
-              <Typography>{forecast && forecast.max_temp}°C</Typography>
-              <Typography>{forecast && forecast.min_temp}°C</Typography>
+              <Typography>{forecastlist && forecastlist.max_temp}°C</Typography>
+              <Typography>{forecastlist && forecastlist.min_temp}°C</Typography>
             </Grid>
           </StyledBox>
         ))}

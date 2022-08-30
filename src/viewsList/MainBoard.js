@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, styled } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 import CurrentDetail from "./CurrentDetail";
 import Forecast from "./Forecast";
 
