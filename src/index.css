@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Raleway:ital,wght@0,300;0,400;1,300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+.appLayout{
+  display: flex;
+  height:100vh
+}
+
+.mainLayout{
+  width:75%;
+  min-width: 981px;
+  background-color: #100E1D;
+}
+
+.sideLayout{
+  width: 25%;
+  min-width: 459px;
+  background-color: #1E213A;
+}
+
+.currentLayout{
+  display: flex;
+  flex-direction: column;
+  margin:50px 10px
+}
+
+.searchButton{
+  height: 48px;
+  width:200px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #6E707A;
+  cursor: pointer;
+}
+
+.searchButton:focus{
+  outline: none;
+}
+
+.cloudBox{
+  background: linear-gradient(rgba(30, 33, 58, 0.8),rgba(30, 33, 58, 0.8)),url("./images//clouds.png");
+  width: 650px;
+  height: 400px;
+  background-repeat: no-repeat;
+  margin-left: -100px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.closeSearch{
+  display: flex;
+  justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.searchPanel{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 0px 30px;
+  position: relative;
+  height: 100vh;
+  transition: left .5s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+  top: 0;
+  left: -25%;
+}
+
+
+.searchPanel-active{
+  top: 0;
+  left: 0;
+}
+
+
+
+.closeSearchIcon{
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.searchInput{
+  width:300px;
+  height:48px;
+  background-color: transparent;
+  border: 1px solid #E7E7EB;
+  border-radius: 4px;
+  padding-left: 20px;
+  font-size: 18px;
+  color: white;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
+.searchInput::placeholder{
+  color: #616475;
+}
+
+.inputForm{
+  margin-top:50px
+}
+
+.citySelect{
+  width: 400px,
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.currentData{
+  color:whitesmoke;
+ 
+  font-family: Raleway;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
